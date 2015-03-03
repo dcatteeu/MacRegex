@@ -13,6 +13,9 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="regexField" destination="d7g-Yl-3Ed" id="lPt-PF-rq3"/>
+                <outlet property="statusLabel" destination="jse-4g-m3f" id="4Tv-Yp-vMi"/>
+                <outlet property="textView" destination="c2Y-n9-ZKi" id="1hn-jt-Vz2"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -685,6 +688,9 @@
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                        <connections>
+                            <action selector="regexEntered:" target="Voe-Tx-rLC" id="uzK-3w-sGK"/>
+                        </connections>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jse-4g-m3f">
                         <rect key="frame" x="20" y="218" width="294" height="17"/>
@@ -701,7 +707,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="c2Y-n9-ZKi">
-                                    <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="223" height="209"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <size key="minSize" width="332" height="209"/>
@@ -728,6 +734,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="clearRegexField:" target="Voe-Tx-rLC" id="W5U-kZ-efq"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
