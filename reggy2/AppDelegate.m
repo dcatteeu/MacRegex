@@ -33,7 +33,10 @@
 
 - (void)applicationWillBecomeActive:(NSNotification *)note {
     [self refreshTextView];
-    // TODO: update the regex
+}
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
+    return YES;
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
