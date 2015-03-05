@@ -17,6 +17,7 @@
 
 @property NSPasteboard *pasteboard;
 @property NSInteger lastChangeCount;
+@property NSArray *matches;
 
 - (IBAction)clearRegexField:(id)sender;
 - (IBAction)regexEntered:(id)sender;
@@ -27,6 +28,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     self.pasteboard = [NSPasteboard generalPasteboard];
+    self.matches = [NSArray array];
 }
 
 - (void)applicationWillBecomeActive:(NSNotification *)note {
@@ -42,19 +44,33 @@
     if ([self.pasteboard changeCount] != self.lastChangeCount) {
         self.lastChangeCount = [self.pasteboard changeCount];
         [self.statusLabel setStringValue:@"Clipboard contents changed"];
-    }
-    NSArray *classes = [[NSArray alloc] initWithObjects:[NSString class], nil];
-    NSArray *copiedItems = [self.pasteboard readObjectsForClasses:classes                                                               options:[NSDictionary dictionary]];
-    if (copiedItems != nil) {
-        [self.textView setString:[copiedItems objectAtIndex:0]];
+        NSArray *classes = [[NSArray alloc] initWithObjects:[NSString class], nil];
+        NSArray *copiedItems = [self.pasteboard readObjectsForClasses:classes                                                               options:[NSDictionary dictionary]];
+        if (copiedItems != nil) {
+            [self.textView setString:[copiedItems objectAtIndex:0]];
+        }
+        [self updateMatches];
     }
 }
 
-- (void)clearMatches {
-    ;
+- (void)removeHighlights:(NSArray *)matches textView:(NSTextView *)textView {
+    for (NSTextCheckingResult *match in matches) {
+        [textView.layoutManager removeTemporaryAttribute:NSBackgroundColorAttributeName
+                                       forCharacterRange:match.range];
+    }
+}
+
+- (void)addHighlights:(NSArray *)matches  textView:(NSTextView *)textView {
+    for (NSTextCheckingResult *match in matches) {
+        [textView.layoutManager addTemporaryAttribute:NSBackgroundColorAttributeName
+                                                value:[NSColor yellowColor]
+                                    forCharacterRange:match.range];
+    }
 }
 
 - (void)updateMatches {
+    [self removeHighlights:self.matches textView:self.textView];
+    
     NSString *regexAsString = [self.regexField stringValue];
     // TODO: check if string is not empty.
     
@@ -63,17 +79,13 @@
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexAsString options:0 error:&error];
     // TODO: Check error here... (maybe the regex pattern was malformed)
     
-    NSArray *matches = [regex matchesInString:string
-                                      options:0
-                                        range:NSMakeRange(0, [string length])];
-    NSLog(@"numberOfMatches: %lu", (unsigned long)matches.count);
-    NSLayoutManager *layoutManager = self.textView.layoutManager;
-    if (matches.count > 0) {
-        [self.statusLabel setStringValue:[NSString stringWithFormat:@"%lu matches found.", (unsigned long)matches.count]];
-        for (NSTextCheckingResult * match in matches) {
-            NSLog(@"%lu, %lu", (unsigned long)match.range.location, (unsigned long)match.range.length);
-            [layoutManager addTemporaryAttribute:NSBackgroundColorAttributeName value:[NSColor yellowColor] forCharacterRange:match.range];
-        }
+    self.matches = [regex matchesInString:string
+                                  options:0
+                                    range:NSMakeRange(0, [string length])];
+    NSLog(@"numberOfMatches: %lu", (unsigned long)self.matches.count);
+    [self addHighlights:self.matches textView:self.textView];
+    if (self.matches.count > 0) {
+        [self.statusLabel setStringValue:[NSString stringWithFormat:@"%lu matches found.", (unsigned long)self.matches.count]];
     } else {
         [self.statusLabel setStringValue:@"No matches found."];
     }
@@ -82,7 +94,7 @@
 - (IBAction)clearRegexField:(id)sender {
     [self.regexField setStringValue:@""];
     [self.statusLabel setStringValue:@"Input cleared."];
-    [self clearMatches];
+    [self updateMatches];
 }
 
 - (IBAction)regexEntered:(id)sender {

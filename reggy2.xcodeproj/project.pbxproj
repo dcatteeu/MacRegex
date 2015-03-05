@@ -398,6 +398,7 @@
 				5247473A1AA4CDD5005652B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5247473B1AA4CDD5005652B1 /* Build configuration list for PBXNativeTarget "reggy2Tests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +407,7 @@
 				5247473D1AA4CDD5005652B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

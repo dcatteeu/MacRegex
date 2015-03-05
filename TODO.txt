@@ -1,0 +1,68 @@
+== v1 ==
+
+This should be a minimally functional, but finished, regular expression tester.
+
+* Close the app when the user closes the window.
+
+* Clean up menu.
+
+The user should not need to change the font of the view, call the help menu, ...
+
+* Fill out the About dialog.
+
+* Set app title, icon, version, copyright, ...
+
+I cannot use Reggy as title. It already exists.
+
+* Redo user interface.
+
+See image below. Tab should cycle through controls. 
+
++----
+|
+|  [Regular expression__________________] [x]
+|  Found 2 matches or Error
+|
++----
+|  
+|  textview in scrollview
+|  
+|
+|
++------------------
+
+
+
+== v2 ==
+
+* Multiple syntaxes
+
+May want to use following library for multiple regex syntaxes: https://github.com/k-takata/Onigmo. It is derived from the library used by reggyapp.com.
+
+
+
+== Feature pool ==
+
+* Back and forth buttons to cycle between matches
+
+* Option to switch between monitoring the pasteboard and monitoring a file; user can chose a file
+
+* option to find&replace
+
+There are 2 textview, 1 that shows the original file with highlighted matches and one that shows the result after replacement. The results are also highlighted and the view are synchronized.
+
+* Option to switch between case sensitive and case insensitive.
+
+* Let the user build a library of regular expressions. Provide some popular examples (email, IP, or MAC address)
+
+* Dynamically highlight matches. Whenever the user stops typing for a long enough time (100ms) update the matches.
+
+* Let the user copy&paste his regular expression. Can this be done without changing the contents of the text view?
+
+* Let the user export, or see, his regular expression in another syntax.
+
+* A menu entry to contact the developer.
+
+* An extensive help document on regular expressions that can be put  next to the main window.
+
+* Show the list of matches.
