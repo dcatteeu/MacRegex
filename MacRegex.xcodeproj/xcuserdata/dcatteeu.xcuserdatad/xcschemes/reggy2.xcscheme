@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5247471A1AA4CDD5005652B1"
-               BuildableName = "reggy2.app"
-               BlueprintName = "reggy2"
-               ReferencedContainer = "container:reggy2.xcodeproj">
+               BuildableName = "MacRegex.app"
+               BlueprintName = "MacRegex"
+               ReferencedContainer = "container:MacRegex.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5247472D1AA4CDD5005652B1"
-               BuildableName = "reggy2Tests.xctest"
-               BlueprintName = "reggy2Tests"
-               ReferencedContainer = "container:reggy2.xcodeproj">
+               BuildableName = "MacRegexTests.xctest"
+               BlueprintName = "MacRegexTests"
+               ReferencedContainer = "container:MacRegex.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5247472D1AA4CDD5005652B1"
-               BuildableName = "reggy2Tests.xctest"
-               BlueprintName = "reggy2Tests"
-               ReferencedContainer = "container:reggy2.xcodeproj">
+               BuildableName = "MacRegexTests.xctest"
+               BlueprintName = "MacRegexTests"
+               ReferencedContainer = "container:MacRegex.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5247471A1AA4CDD5005652B1"
-            BuildableName = "reggy2.app"
-            BlueprintName = "reggy2"
-            ReferencedContainer = "container:reggy2.xcodeproj">
+            BuildableName = "MacRegex.app"
+            BlueprintName = "MacRegex"
+            ReferencedContainer = "container:MacRegex.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5247471A1AA4CDD5005652B1"
-            BuildableName = "reggy2.app"
-            BlueprintName = "reggy2"
-            ReferencedContainer = "container:reggy2.xcodeproj">
+            BuildableName = "MacRegex.app"
+            BlueprintName = "MacRegex"
+            ReferencedContainer = "container:MacRegex.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5247471A1AA4CDD5005652B1"
-            BuildableName = "reggy2.app"
-            BlueprintName = "reggy2"
-            ReferencedContainer = "container:reggy2.xcodeproj">
+            BuildableName = "MacRegex.app"
+            BlueprintName = "MacRegex"
+            ReferencedContainer = "container:MacRegex.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

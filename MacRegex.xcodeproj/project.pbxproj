@@ -25,14 +25,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5247471B1AA4CDD5005652B1 /* reggy2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reggy2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5247471B1AA4CDD5005652B1 /* MacRegex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacRegex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5247471F1AA4CDD5005652B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524747201AA4CDD5005652B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		524747211AA4CDD5005652B1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		524747231AA4CDD5005652B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		524747251AA4CDD5005652B1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		524747281AA4CDD5005652B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		5247472E1AA4CDD5005652B1 /* reggy2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reggy2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5247472E1AA4CDD5005652B1 /* MacRegexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacRegexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		524747331AA4CDD5005652B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524747341AA4CDD5005652B1 /* reggy2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = reggy2Tests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,8 +67,8 @@
 		5247471C1AA4CDD5005652B1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5247471B1AA4CDD5005652B1 /* reggy2.app */,
-				5247472E1AA4CDD5005652B1 /* reggy2Tests.xctest */,
+				5247471B1AA4CDD5005652B1 /* MacRegex.app */,
+				5247472E1AA4CDD5005652B1 /* MacRegexTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,9 +114,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5247471A1AA4CDD5005652B1 /* reggy2 */ = {
+		5247471A1AA4CDD5005652B1 /* MacRegex */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 524747381AA4CDD5005652B1 /* Build configuration list for PBXNativeTarget "reggy2" */;
+			buildConfigurationList = 524747381AA4CDD5005652B1 /* Build configuration list for PBXNativeTarget "MacRegex" */;
 			buildPhases = (
 				524747171AA4CDD5005652B1 /* Sources */,
 				524747181AA4CDD5005652B1 /* Frameworks */,
@@ -126,14 +126,14 @@
 			);
 			dependencies = (
 			);
-			name = reggy2;
+			name = MacRegex;
 			productName = reggy2;
-			productReference = 5247471B1AA4CDD5005652B1 /* reggy2.app */;
+			productReference = 5247471B1AA4CDD5005652B1 /* MacRegex.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5247472D1AA4CDD5005652B1 /* reggy2Tests */ = {
+		5247472D1AA4CDD5005652B1 /* MacRegexTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5247473B1AA4CDD5005652B1 /* Build configuration list for PBXNativeTarget "reggy2Tests" */;
+			buildConfigurationList = 5247473B1AA4CDD5005652B1 /* Build configuration list for PBXNativeTarget "MacRegexTests" */;
 			buildPhases = (
 				5247472A1AA4CDD5005652B1 /* Sources */,
 				5247472B1AA4CDD5005652B1 /* Frameworks */,
@@ -144,9 +144,9 @@
 			dependencies = (
 				524747301AA4CDD5005652B1 /* PBXTargetDependency */,
 			);
-			name = reggy2Tests;
+			name = MacRegexTests;
 			productName = reggy2Tests;
-			productReference = 5247472E1AA4CDD5005652B1 /* reggy2Tests.xctest */;
+			productReference = 5247472E1AA4CDD5005652B1 /* MacRegexTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -167,7 +167,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 524747161AA4CDD5005652B1 /* Build configuration list for PBXProject "reggy2" */;
+			buildConfigurationList = 524747161AA4CDD5005652B1 /* Build configuration list for PBXProject "MacRegex" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -180,8 +180,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5247471A1AA4CDD5005652B1 /* reggy2 */,
-				5247472D1AA4CDD5005652B1 /* reggy2Tests */,
+				5247471A1AA4CDD5005652B1 /* MacRegex */,
+				5247472D1AA4CDD5005652B1 /* MacRegexTests */,
 			);
 		};
 /* End PBXProject section */
@@ -228,7 +228,7 @@
 /* Begin PBXTargetDependency section */
 		524747301AA4CDD5005652B1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5247471A1AA4CDD5005652B1 /* reggy2 */;
+			target = 5247471A1AA4CDD5005652B1 /* MacRegex */;
 			targetProxy = 5247472F1AA4CDD5005652B1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -328,7 +328,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = reggy2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MacRegex;
 			};
 			name = Debug;
 		};
@@ -339,7 +339,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = reggy2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MacRegex;
 			};
 			name = Release;
 		};
@@ -358,7 +358,7 @@
 				);
 				INFOPLIST_FILE = reggy2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MacRegexTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/reggy2.app/Contents/MacOS/reggy2";
 			};
 			name = Debug;
@@ -374,7 +374,7 @@
 				);
 				INFOPLIST_FILE = reggy2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MacRegexTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/reggy2.app/Contents/MacOS/reggy2";
 			};
 			name = Release;
@@ -382,7 +382,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		524747161AA4CDD5005652B1 /* Build configuration list for PBXProject "reggy2" */ = {
+		524747161AA4CDD5005652B1 /* Build configuration list for PBXProject "MacRegex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				524747361AA4CDD5005652B1 /* Debug */,
@@ -391,7 +391,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		524747381AA4CDD5005652B1 /* Build configuration list for PBXNativeTarget "reggy2" */ = {
+		524747381AA4CDD5005652B1 /* Build configuration list for PBXNativeTarget "MacRegex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				524747391AA4CDD5005652B1 /* Debug */,
@@ -400,7 +400,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5247473B1AA4CDD5005652B1 /* Build configuration list for PBXNativeTarget "reggy2Tests" */ = {
+		5247473B1AA4CDD5005652B1 /* Build configuration list for PBXNativeTarget "MacRegexTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5247473C1AA4CDD5005652B1 /* Debug */,

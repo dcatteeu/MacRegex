@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:reggy2.xcodeproj">
+      location = "self:MacRegex.xcodeproj">
    </FileRef>
 </Workspace>

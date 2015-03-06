@@ -2,34 +2,15 @@
 
 This should be a minimally functional, but finished, regular expression tester.
 
-* Close the app when the user closes the window.
-
 * Clean up menu.
 
 The user should not need to change the font of the view, call the help menu, ...
 
 * Fill out the About dialog.
 
-* Set app title, icon, version, copyright, ...
+* Provide an icon.
 
-I cannot use Reggy as title. It already exists.
-
-* Redo user interface.
-
-See image below. Tab should cycle through controls. 
-
-+----
-|
-|  [Regular expression__________________] [x]
-|  Found 2 matches or Error
-|
-+----
-|  
-|  textview in scrollview
-|  
-|
-|
-+------------------
+* Add some help. Just saying the syntax is that of Objective-C and a link to ICU (see Apple's docs).
 
 
 
