@@ -11,7 +11,9 @@
 		524747241AA4CDD5005652B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 524747231AA4CDD5005652B1 /* main.m */; };
 		524747261AA4CDD5005652B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524747251AA4CDD5005652B1 /* Images.xcassets */; };
 		524747291AA4CDD5005652B1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524747271AA4CDD5005652B1 /* MainMenu.xib */; };
-		524747351AA4CDD5005652B1 /* reggy2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 524747341AA4CDD5005652B1 /* reggy2Tests.m */; };
+		524747351AA4CDD5005652B1 /* MacRegexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 524747341AA4CDD5005652B1 /* MacRegexTests.m */; };
+		52A876331AAA5D0000D6FEEE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52A8762F1AAA5D0000D6FEEE /* Info.plist */; };
+		52A876341AAA5D0000D6FEEE /* MacRegex.html in Resources */ = {isa = PBXBuildFile; fileRef = 52A876311AAA5D0000D6FEEE /* MacRegex.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +36,9 @@
 		524747281AA4CDD5005652B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5247472E1AA4CDD5005652B1 /* MacRegexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacRegexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		524747331AA4CDD5005652B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		524747341AA4CDD5005652B1 /* reggy2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = reggy2Tests.m; sourceTree = "<group>"; };
+		524747341AA4CDD5005652B1 /* MacRegexTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MacRegexTests.m; sourceTree = "<group>"; };
+		52A8762F1AAA5D0000D6FEEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		52A876321AAA5D0000D6FEEE /* English */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = English; path = English.lproj/MacRegex.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +62,8 @@
 		524747121AA4CDD5005652B1 = {
 			isa = PBXGroup;
 			children = (
-				5247471D1AA4CDD5005652B1 /* reggy2 */,
-				524747311AA4CDD5005652B1 /* reggy2Tests */,
+				5247471D1AA4CDD5005652B1 /* MacRegex */,
+				524747311AA4CDD5005652B1 /* MacRegexTests */,
 				5247471C1AA4CDD5005652B1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,7 +77,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5247471D1AA4CDD5005652B1 /* reggy2 */ = {
+		5247471D1AA4CDD5005652B1 /* MacRegex */ = {
 			isa = PBXGroup;
 			children = (
 				524747201AA4CDD5005652B1 /* AppDelegate.h */,
@@ -82,24 +86,27 @@
 				524747271AA4CDD5005652B1 /* MainMenu.xib */,
 				5247471E1AA4CDD5005652B1 /* Supporting Files */,
 			);
+			name = MacRegex;
 			path = reggy2;
 			sourceTree = "<group>";
 		};
 		5247471E1AA4CDD5005652B1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				52A8762D1AAA5D0000D6FEEE /* MaxRegex.help */,
 				5247471F1AA4CDD5005652B1 /* Info.plist */,
 				524747231AA4CDD5005652B1 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		524747311AA4CDD5005652B1 /* reggy2Tests */ = {
+		524747311AA4CDD5005652B1 /* MacRegexTests */ = {
 			isa = PBXGroup;
 			children = (
-				524747341AA4CDD5005652B1 /* reggy2Tests.m */,
+				524747341AA4CDD5005652B1 /* MacRegexTests.m */,
 				524747321AA4CDD5005652B1 /* Supporting Files */,
 			);
+			name = MacRegexTests;
 			path = reggy2Tests;
 			sourceTree = "<group>";
 		};
@@ -109,6 +116,32 @@
 				524747331AA4CDD5005652B1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52A8762D1AAA5D0000D6FEEE /* MaxRegex.help */ = {
+			isa = PBXGroup;
+			children = (
+				52A8762E1AAA5D0000D6FEEE /* Contents */,
+			);
+			name = MaxRegex.help;
+			path = ../MaxRegex.help;
+			sourceTree = "<group>";
+		};
+		52A8762E1AAA5D0000D6FEEE /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				52A8762F1AAA5D0000D6FEEE /* Info.plist */,
+				52A876301AAA5D0000D6FEEE /* Resources */,
+			);
+			path = Contents;
+			sourceTree = "<group>";
+		};
+		52A876301AAA5D0000D6FEEE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				52A876311AAA5D0000D6FEEE /* MacRegex.html */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +207,7 @@
 			knownRegions = (
 				en,
 				Base,
+				English,
 			);
 			mainGroup = 524747121AA4CDD5005652B1;
 			productRefGroup = 5247471C1AA4CDD5005652B1 /* Products */;
@@ -191,8 +225,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52A876341AAA5D0000D6FEEE /* MacRegex.html in Resources */,
 				524747261AA4CDD5005652B1 /* Images.xcassets in Resources */,
 				524747291AA4CDD5005652B1 /* MainMenu.xib in Resources */,
+				52A876331AAA5D0000D6FEEE /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				524747351AA4CDD5005652B1 /* reggy2Tests.m in Sources */,
+				524747351AA4CDD5005652B1 /* MacRegexTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +276,14 @@
 				524747281AA4CDD5005652B1 /* Base */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		52A876311AAA5D0000D6FEEE /* MacRegex.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52A876321AAA5D0000D6FEEE /* English */,
+			);
+			name = MacRegex.html;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

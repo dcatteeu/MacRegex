@@ -20,20 +20,6 @@
                ReferencedContainer = "container:MacRegex.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5247472D1AA4CDD5005652B1"
-               BuildableName = "MacRegexTests.xctest"
-               BlueprintName = "MacRegexTests"
-               ReferencedContainer = "container:MacRegex.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -42,16 +28,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5247472D1AA4CDD5005652B1"
-               BuildableName = "MacRegexTests.xctest"
-               BlueprintName = "MacRegexTests"
-               ReferencedContainer = "container:MacRegex.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
@@ -105,7 +81,6 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
-      customArchiveName = "MacRegex"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
