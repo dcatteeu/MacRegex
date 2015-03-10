@@ -1,4 +1,4 @@
-== v1 ==
+== v0.9 ==
 
 This should be a minimally functional, but finished, regular expression tester.
 
@@ -8,9 +8,13 @@ This should be a minimally functional, but finished, regular expression tester.
 
 * Add some help. Just saying the syntax is that of Objective-C and a link to ICU (see Apple's docs).
 
+* BUG: What if regex is invalid?
+
+* BUG: What if user copies text from regex field?
 
 
-== v2 ==
+
+== v1 ==
 
 * Multiple syntaxes
 
@@ -18,7 +22,7 @@ May want to use following library for multiple regex syntaxes: https://github.co
 
 
 
-== Feature pool ==
+== Features ==
 
 * Back and forth buttons to cycle between matches
 

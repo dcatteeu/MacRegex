@@ -44,15 +44,34 @@
 }
 
 - (void)refreshTextView {
-    if ([self.pasteboard changeCount] != self.lastChangeCount) {
-        self.lastChangeCount = [self.pasteboard changeCount];
+    if ([self.pasteboard changeCount] == self.lastChangeCount)
+        return;
+    
+    self.lastChangeCount = [self.pasteboard changeCount];
+    NSArray *classes = [[NSArray alloc] initWithObjects:[NSString class], nil];
+    NSArray *copiedItems = [self.pasteboard readObjectsForClasses:classes                                                               options:[NSDictionary dictionary]];
+    
+    if (copiedItems == nil) {
+        NSLog(@"ERR: NSPasteboard readObjectsForClasses:options: did not allocate an array.");
+        [self removeHighlights:self.matches textView:self.textView];
+        return;
+    }
+    
+    /* Handle cases where the clipboard contains only an image, or something else non-text. */
+    if (copiedItems.count == 0) {
+        [self.statusLabel setStringValue:@"Clipboard contains no text"];
+        [self removeHighlights:self.matches textView:self.textView];
+        return;
+    }
+    
+    [self.textView setString:[copiedItems objectAtIndex:0]];
+    [self updateMatches];
+    
+    /* It is possible that more than one text item is on the clipboard. TODO: Show all text items. */
+    if (copiedItems.count > 1) {
+        [self.statusLabel setStringValue:@"Clipboard contains more than one item. Only first element shown."];
+    } else {
         [self.statusLabel setStringValue:@"Clipboard contents changed"];
-        NSArray *classes = [[NSArray alloc] initWithObjects:[NSString class], nil];
-        NSArray *copiedItems = [self.pasteboard readObjectsForClasses:classes                                                               options:[NSDictionary dictionary]];
-        if (copiedItems != nil) {
-            [self.textView setString:[copiedItems objectAtIndex:0]];
-        }
-        [self updateMatches];
     }
 }
 
