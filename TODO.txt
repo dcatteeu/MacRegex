@@ -2,8 +2,6 @@
 
 This should be a minimally functional, but finished, regular expression tester.
 
-* BUG: What if there is no utf8string on the pasteboard, but for example an image? What if there is more than one item on the pasteboard?
-
 * Fill out the About dialog.
 
 * Add some help. Just saying the syntax is that of Objective-C and a link to ICU (see Apple's docs).

@@ -94,12 +94,17 @@
     [self removeHighlights:self.matches textView:self.textView];
     
     NSString *regexAsString = [self.regexField stringValue];
-    // TODO: check if string is not empty.
+    if ([regexAsString length] == 0)
+        return;
     
     NSString *string = [self.textView string];
     NSError *error = NULL;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexAsString options:0 error:&error];
-    // TODO: Check error here... (maybe the regex pattern was malformed)
+    if (error) {
+        NSLog(@"error");
+        [self.statusLabel setStringValue:[NSString stringWithFormat:@"The regex '%@' is invalid.", regexAsString]];
+        return;
+    }
     
     self.matches = [regex matchesInString:string
                                   options:0
