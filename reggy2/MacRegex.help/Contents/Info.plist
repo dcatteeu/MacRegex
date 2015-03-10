@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key>
+	<string>MacRegex</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.dcatteeu.MacRegex.help</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>HPDBookIndexPath</key>
+	<string>MacRegex.helpindex</string>
+	<key>HPDBookAccessPath</key>
+	<string>MacRegex.html</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>HPDBookKBProduct</key>
+	<string>macregex1</string>
+	<key>HPDBookTitle</key>
+	<string>MacRegex Help</string>
+	<key>HPDBookIconPath</key>
+	<string>shrd/icon.png</string>
+	<key>CFBundleSignature</key>
+	<string>hbwr</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>HPDBookKBURL</key>
+	<string>https://mycompany.com/kbsearch.py?p=&apos;product&apos;&amp;q=&apos;query&apos;&amp;l=&apos;lang&apos;</string>
+	<key>HPDBookRemoteURL</key>
+	<string>https://help.mycompany.com/snowleopard/com.mycompany.surfwriter.help/r1/</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en_us</string>
+	<key>HPDBookType</key>
+	<string>3</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1</string>
+</dict>
+</plist>

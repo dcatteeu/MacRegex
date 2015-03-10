@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5235B9471AAF825500685BAF /* MacRegex.help in Resources */ = {isa = PBXBuildFile; fileRef = 5235B9461AAF825500685BAF /* MacRegex.help */; };
 		524747221AA4CDD5005652B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 524747211AA4CDD5005652B1 /* AppDelegate.m */; };
 		524747241AA4CDD5005652B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 524747231AA4CDD5005652B1 /* main.m */; };
 		524747261AA4CDD5005652B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524747251AA4CDD5005652B1 /* Images.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5235B9461AAF825500685BAF /* MacRegex.help */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MacRegex.help; path = reggy2/MacRegex.help; sourceTree = "<group>"; };
 		5247471B1AA4CDD5005652B1 /* MacRegex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacRegex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5247471F1AA4CDD5005652B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524747201AA4CDD5005652B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		524747121AA4CDD5005652B1 = {
 			isa = PBXGroup;
 			children = (
+				5235B9461AAF825500685BAF /* MacRegex.help */,
 				5247471D1AA4CDD5005652B1 /* MacRegex */,
 				524747311AA4CDD5005652B1 /* MacRegexTests */,
 				5247471C1AA4CDD5005652B1 /* Products */,
@@ -196,6 +199,7 @@
 			files = (
 				524747261AA4CDD5005652B1 /* Images.xcassets in Resources */,
 				524747291AA4CDD5005652B1 /* MainMenu.xib in Resources */,
+				5235B9471AAF825500685BAF /* MacRegex.help in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

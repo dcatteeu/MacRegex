@@ -6,8 +6,6 @@ This should be a minimally functional, but finished, regular expression tester.
 
 * Add some help. Just saying the syntax is that of Objective-C and a link to ICU (see Apple's docs).
 
-* BUG: What if regex is invalid?
-
 * BUG: What if user copies text from regex field?
 
 
@@ -45,3 +43,5 @@ There are 2 textview, 1 that shows the original file with highlighted matches an
 * An extensive help document on regular expressions that can be put  next to the main window.
 
 * Show the list of matches.
+
+* Show all text items on the clipboard. In some cases, one can put more than one item on the clipboard. Can there be more than one text item? If so, display all of them.
