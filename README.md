@@ -1,4 +1,4 @@
-# MacRegex Help #
+# MacRegex #
 
 MacRegex is a regular expression tester that automatically shows the current contents of the clipboard and highlights all text that matches your regular expression.
 
