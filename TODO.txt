@@ -1,15 +1,3 @@
-== v0.9 ==
-
-This should be a minimally functional, but finished, regular expression tester.
-
-* Fill out the About dialog.
-
-* Add some help. Just saying the syntax is that of Objective-C and a link to ICU (see Apple's docs).
-
-* BUG: What if user copies text from regex field?
-
-
-
 == v1 ==
 
 * Multiple syntaxes
