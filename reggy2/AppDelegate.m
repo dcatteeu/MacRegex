@@ -90,6 +90,14 @@
     }
 }
 
+- (NSArray *)getMatches:(NSString *)regexAsString inString:(NSString *)string error:(NSError **)error {
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexAsString options:0 error:error];
+    if (*error) {
+        return NULL;
+    }
+    return [regex matchesInString:string options:0 range:NSMakeRange(0, [string length])];
+}
+
 - (void)updateMatches {
     [self removeHighlights:self.matches textView:self.textView];
     
@@ -99,16 +107,15 @@
     
     NSString *string = [self.textView string];
     NSError *error = NULL;
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexAsString options:0 error:&error];
+    
+    self.matches = [self getMatches:regexAsString inString:string error:&error];
+    
     if (error) {
         NSLog(@"error");
         [self.statusLabel setStringValue:[NSString stringWithFormat:@"The regex '%@' is invalid.", regexAsString]];
         return;
     }
     
-    self.matches = [regex matchesInString:string
-                                  options:0
-                                    range:NSMakeRange(0, [string length])];
     NSLog(@"numberOfMatches: %lu", (unsigned long)self.matches.count);
     [self addHighlights:self.matches textView:self.textView];
     if (self.matches.count > 0) {

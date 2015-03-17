@@ -4,6 +4,9 @@
 
 May want to use following library for multiple regex syntaxes: https://github.com/k-takata/Onigmo. It is derived from the library used by reggyapp.com.
 
+Do we need a common API for multiple regex libs (such as Cocoa's and Oniguruma)? We probably need two basic classes: RegularExpression and TextCheckingResult.
+
+Objective-C wrapper for Oniguruma: see cocoaoniguruma.
 
 
 == Features ==
