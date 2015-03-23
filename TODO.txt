@@ -1,15 +1,18 @@
-== v1 ==
+== v1.1 ==
 
-* Multiple syntaxes
-
-May want to use following library for multiple regex syntaxes: https://github.com/k-takata/Onigmo. It is derived from the library used by reggyapp.com.
-
-Do we need a common API for multiple regex libs (such as Cocoa's and Oniguruma)? We probably need two basic classes: RegularExpression and TextCheckingResult.
-
-Objective-C wrapper for Oniguruma: see cocoaoniguruma.
 
 
 == Features ==
+
+* An extensive help document on regular expressions that can be put next to the main window.
+
+* Option to switch between case sensitive and case insensitive.
+
+* Add a update or find button for users not used to typing enter/return.
+
+* A menu entry to contact the developer.
+
+* Show the list of matches.
 
 * Back and forth buttons to cycle between matches
 
@@ -19,20 +22,12 @@ Objective-C wrapper for Oniguruma: see cocoaoniguruma.
 
 There are 2 textview, 1 that shows the original file with highlighted matches and one that shows the result after replacement. The results are also highlighted and the view are synchronized.
 
-* Option to switch between case sensitive and case insensitive.
-
-* Let the user build a library of regular expressions. Provide some popular examples (email, IP, or MAC address)
-
-* Dynamically highlight matches. Whenever the user stops typing for a long enough time (100ms) update the matches.
-
 * Let the user copy&paste his regular expression. Can this be done without changing the contents of the text view?
+
+* Show all text items on the clipboard. In some cases, one can put more than one item on the clipboard. Can there be more than one text item? If so, display all of them.
 
 * Let the user export, or see, his regular expression in another syntax.
 
-* A menu entry to contact the developer.
+* Dynamically highlight matches. Whenever the user stops typing for a long enough time (100ms) update the matches.
 
-* An extensive help document on regular expressions that can be put  next to the main window.
-
-* Show the list of matches.
-
-* Show all text items on the clipboard. In some cases, one can put more than one item on the clipboard. Can there be more than one text item? If so, display all of them.
+* Let the user build a library of regular expressions. Provide some popular examples (email, IP, or MAC address)

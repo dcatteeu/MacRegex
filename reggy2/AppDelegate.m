@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "RegularExpression.h"
 
 @interface AppDelegate ()
 
@@ -14,13 +15,16 @@
 @property (weak) IBOutlet NSTextField *statusLabel;
 @property (weak) IBOutlet NSWindow *window;
 @property (unsafe_unretained) IBOutlet NSTextView *textView;
+@property (weak) IBOutlet NSPopUpButton *syntaxPopupButton;
 
 @property NSPasteboard *pasteboard;
 @property NSInteger lastChangeCount;
 @property NSArray *matches;
+@property RESyntax syntax;
 
 - (IBAction)clearRegexField:(id)sender;
 - (IBAction)regexEntered:(id)sender;
+- (IBAction)syntaxChanged:(id)sender;
 
 @end
 
@@ -29,6 +33,16 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     self.pasteboard = [NSPasteboard generalPasteboard];
     self.matches = [NSArray array];
+    
+    /* Load names of syntaxes in popupbutton. */
+    int n = (int)RENumberOfSyntaxes();
+    for (int i = 0; i < n; i++) {
+        [self.syntaxPopupButton addItemWithTitle:REGetSyntaxName(i)];
+    }
+    
+    /* Set default syntax. */
+    self.syntax = RE_SYNTAX_OBJECTIVE_C;
+    [self.syntaxPopupButton selectItemAtIndex:self.syntax];
 }
 
 - (void)applicationWillBecomeActive:(NSNotification *)note {
@@ -37,10 +51,6 @@
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
     return YES;
-}
-
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
 }
 
 - (void)refreshTextView {
@@ -71,57 +81,7 @@
     if (copiedItems.count > 1) {
         [self.statusLabel setStringValue:@"Clipboard contains more than one item. Only first element shown."];
     } else {
-        [self.statusLabel setStringValue:@"Clipboard contents changed"];
-    }
-}
-
-- (void)removeHighlights:(NSArray *)matches textView:(NSTextView *)textView {
-    for (NSTextCheckingResult *match in matches) {
-        [textView.layoutManager removeTemporaryAttribute:NSBackgroundColorAttributeName
-                                       forCharacterRange:match.range];
-    }
-}
-
-- (void)addHighlights:(NSArray *)matches  textView:(NSTextView *)textView {
-    for (NSTextCheckingResult *match in matches) {
-        [textView.layoutManager addTemporaryAttribute:NSBackgroundColorAttributeName
-                                                value:[NSColor yellowColor]
-                                    forCharacterRange:match.range];
-    }
-}
-
-- (NSArray *)getMatches:(NSString *)regexAsString inString:(NSString *)string error:(NSError **)error {
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexAsString options:0 error:error];
-    if (*error) {
-        return NULL;
-    }
-    return [regex matchesInString:string options:0 range:NSMakeRange(0, [string length])];
-}
-
-- (void)updateMatches {
-    [self removeHighlights:self.matches textView:self.textView];
-    
-    NSString *regexAsString = [self.regexField stringValue];
-    if ([regexAsString length] == 0)
-        return;
-    
-    NSString *string = [self.textView string];
-    NSError *error = NULL;
-    
-    self.matches = [self getMatches:regexAsString inString:string error:&error];
-    
-    if (error) {
-        NSLog(@"error");
-        [self.statusLabel setStringValue:[NSString stringWithFormat:@"The regex '%@' is invalid.", regexAsString]];
-        return;
-    }
-    
-    NSLog(@"numberOfMatches: %lu", (unsigned long)self.matches.count);
-    [self addHighlights:self.matches textView:self.textView];
-    if (self.matches.count > 0) {
-        [self.statusLabel setStringValue:[NSString stringWithFormat:@"%lu matches found.", (unsigned long)self.matches.count]];
-    } else {
-        [self.statusLabel setStringValue:@"No matches found."];
+        [self.statusLabel setStringValue:@"Clipboard contents changed."];
     }
 }
 
@@ -133,6 +93,57 @@
 
 - (IBAction)regexEntered:(id)sender {
     [self updateMatches];
+}
+
+- (IBAction)syntaxChanged:(id)sender {
+    [self updateMatches];
+}
+
+- (void)removeHighlights:(NSArray *)matches textView:(NSTextView *)textView {
+    for (REMatch *match in matches) {
+        [textView.layoutManager removeTemporaryAttribute:NSBackgroundColorAttributeName
+                                       forCharacterRange:match.range];
+    }
+}
+
+- (void)addHighlights:(NSArray *)matches textView:(NSTextView *)textView {
+    for (REMatch *match in matches) {
+        [textView.layoutManager addTemporaryAttribute:NSBackgroundColorAttributeName
+                                                value:[NSColor yellowColor]
+                                    forCharacterRange:match.range];
+    }
+}
+
+/* Call this whenever something changed. */
+- (void)updateMatches {
+    [self removeHighlights:self.matches textView:self.textView];
+    
+    NSString *regexAsString = [self.regexField stringValue];
+    if ([regexAsString length] == 0)
+        return;
+    
+    NSString *string = [self.textView string];
+    RESyntax syntax = (RESyntax)[self.syntaxPopupButton indexOfSelectedItem];
+    NSError *error = NULL;
+    
+    self.matches = REGetMatches(regexAsString, string, syntax, &error);
+    
+    if (error) {
+        NSLog(@"error");
+        [self.statusLabel setStringValue:[NSString stringWithFormat:@"The regex '%@' is invalid.", regexAsString]];
+        return;
+    }
+    
+    //NSLog(@"numberOfMatches: %lu", (unsigned long)self.matches.count);
+    [self addHighlights:self.matches textView:self.textView];
+    
+    if (self.matches.count == 1) {
+        [self.statusLabel setStringValue:@"1 match found."];
+    } else if (self.matches.count > 1) {
+        [self.statusLabel setStringValue:[NSString stringWithFormat:@"%lu matches found.", (unsigned long)self.matches.count]];
+    } else {
+        [self.statusLabel setStringValue:@"No matches found."];
+    }
 }
 
 @end

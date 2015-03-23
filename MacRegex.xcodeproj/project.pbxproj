@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52016D1A1AB7423300FF75BD /* RegularExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 52016D191AB7423300FF75BD /* RegularExpression.m */; };
 		5235B9471AAF825500685BAF /* MacRegex.help in Resources */ = {isa = PBXBuildFile; fileRef = 5235B9461AAF825500685BAF /* MacRegex.help */; };
 		524747221AA4CDD5005652B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 524747211AA4CDD5005652B1 /* AppDelegate.m */; };
 		524747241AA4CDD5005652B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 524747231AA4CDD5005652B1 /* main.m */; };
 		524747261AA4CDD5005652B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524747251AA4CDD5005652B1 /* Images.xcassets */; };
 		524747291AA4CDD5005652B1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524747271AA4CDD5005652B1 /* MainMenu.xib */; };
 		524747351AA4CDD5005652B1 /* MacRegexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 524747341AA4CDD5005652B1 /* MacRegexTests.m */; };
+		525F3A861AC0203300344114 /* CocoaOniguruma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525F3A851AC0203300344114 /* CocoaOniguruma.framework */; };
+		525F3A871AC0204900344114 /* CocoaOniguruma.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 525F3A851AC0203300344114 /* CocoaOniguruma.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,7 +28,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		525F3A841AC01F9200344114 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				525F3A871AC0204900344114 /* CocoaOniguruma.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		52016D181AB7423300FF75BD /* RegularExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegularExpression.h; sourceTree = "<group>"; };
+		52016D191AB7423300FF75BD /* RegularExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularExpression.m; sourceTree = "<group>"; };
 		5235B9461AAF825500685BAF /* MacRegex.help */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MacRegex.help; path = reggy2/MacRegex.help; sourceTree = "<group>"; };
 		5247471B1AA4CDD5005652B1 /* MacRegex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacRegex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5247471F1AA4CDD5005652B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +55,7 @@
 		5247472E1AA4CDD5005652B1 /* MacRegexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacRegexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		524747331AA4CDD5005652B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524747341AA4CDD5005652B1 /* MacRegexTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MacRegexTests.m; sourceTree = "<group>"; };
+		525F3A851AC0203300344114 /* CocoaOniguruma.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaOniguruma.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525F3A861AC0203300344114 /* CocoaOniguruma.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +80,7 @@
 		524747121AA4CDD5005652B1 = {
 			isa = PBXGroup;
 			children = (
+				525F3A851AC0203300344114 /* CocoaOniguruma.framework */,
 				5235B9461AAF825500685BAF /* MacRegex.help */,
 				5247471D1AA4CDD5005652B1 /* MacRegex */,
 				524747311AA4CDD5005652B1 /* MacRegexTests */,
@@ -84,6 +105,8 @@
 				524747251AA4CDD5005652B1 /* Images.xcassets */,
 				524747271AA4CDD5005652B1 /* MainMenu.xib */,
 				5247471E1AA4CDD5005652B1 /* Supporting Files */,
+				52016D181AB7423300FF75BD /* RegularExpression.h */,
+				52016D191AB7423300FF75BD /* RegularExpression.m */,
 			);
 			name = MacRegex;
 			path = reggy2;
@@ -126,6 +149,7 @@
 				524747171AA4CDD5005652B1 /* Sources */,
 				524747181AA4CDD5005652B1 /* Frameworks */,
 				524747191AA4CDD5005652B1 /* Resources */,
+				525F3A841AC01F9200344114 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -217,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52016D1A1AB7423300FF75BD /* RegularExpression.m in Sources */,
 				524747241AA4CDD5005652B1 /* main.m in Sources */,
 				524747221AA4CDD5005652B1 /* AppDelegate.m in Sources */,
 			);
@@ -286,6 +311,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/Cellar/oniguruma/5.9.6/include,
+				);
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -322,6 +353,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/Cellar/oniguruma/5.9.6/include,
+				);
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -333,8 +370,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = reggy2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = MacRegex;
 			};
 			name = Debug;
@@ -344,8 +390,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = reggy2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = MacRegex;
 			};
 			name = Release;
